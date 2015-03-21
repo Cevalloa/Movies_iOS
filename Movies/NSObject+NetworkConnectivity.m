@@ -7,11 +7,12 @@
 //
 
 #import "NSObject+NetworkConnectivity.h"
+#import "MovieObject.h"
 
 @implementation NSObject (NetworkConnectivity)
 
 #pragma mark Web Server Data Retrieval Methods
--(void)methodModalLayerSearchMovies:(void (^)(NSDictionary *))completion withUserSearchInput:(NSString *)stringToSearch{
+-(void)methodModalLayerSearchMovies:(void (^)(NSArray *))completion withUserSearchInput:(NSString *)stringToSearch{
     
     //We want to URL encode the string comming in from the user
     NSString *stringToSearchNowEncodedURL = [stringToSearch stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
@@ -27,21 +28,34 @@
     
     //We only need data task for this, not download task
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+       
+        if (error){
+            //Temporary placeholder for error
+            NSLog(@"Something has gone wrong.. %@,", error);
+            completion(nil);
+        }
         
+        
+        NSDictionary *dictionaryWithMoviesFoundInSearch = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        
+        NSError *errorForMantle;
+        
+        //Uses mantle to take the JSON array & transform it into "MovieObject" objects
+        NSArray *arrayOfMovies = [MTLJSONAdapter modelsOfClass:[MovieObject class]
+                                                 fromJSONArray:dictionaryWithMoviesFoundInSearch[@"movies"]
+                                                         error:&errorForMantle];
+        
+        //Goes back onto the main thread for UI manipulation
         dispatch_async(dispatch_get_main_queue(), ^{
-            
-            if (error){
-                //Temporary placeholder for error
-                NSLog(@"Something has gone wrong.. %@,", error);
+
+            //Error handling for mantle happens here
+            if(errorForMantle){
+                NSLog(@"Error from mantle is.. %@",errorForMantle);
                 completion(nil);
             }
             
-            
-            NSDictionary *dictionaryWithMoviesFoundInSearch = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-            
-            //Goes back onto the main thread for UI manipulation
-            
-            completion(dictionaryWithMoviesFoundInSearch);
+            //Tells block we are complete & hold the data
+            completion(arrayOfMovies);
             
         });
 

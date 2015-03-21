@@ -19,8 +19,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self methodModalLayerSearchMovies:^(NSDictionary *dictionaryWithMovie) {
-        NSLog(@"%@", [dictionaryWithMovie[@"movies"] objectAtIndex:0]);
+    [self methodModalLayerSearchMovies:^(NSArray *arrayWithMovies) {
+        NSLog(@"Count: %lu", [arrayWithMovies count]);
+        NSLog(@"Returned array: %@", arrayWithMovies);
     } withUserSearchInput:@"Toy Story"];
     
 }

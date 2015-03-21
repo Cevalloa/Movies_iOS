@@ -12,7 +12,7 @@
 @interface NSObject (NetworkConnectivity)
 
 #pragma mark - Web Server Data Retrieval Methods
--(void)methodModalLayerSearchMovies:(void(^)(NSDictionary *dictionaryWithMovie))completion withUserSearchInput:(NSString *)stringToSearch;
+-(void)methodModalLayerSearchMovies:(void(^)(NSArray *dictionaryWithMovie))completion withUserSearchInput:(NSString *)stringToSearch;
 
 #pragma mark - Media Retrieval Methods
 -(void)methodModalLayerReturnImage:(void(^)(UIImage *))completion withStringLinkingToImage:(NSString *)stringLinkingToImage;
