@@ -15,6 +15,7 @@
 
 @implementation ViewController
 
+#pragma mark - View Controller Lifecycle Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -26,9 +27,21 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Collection View DataSource Methods
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    //Identifier is set in storyboard
+    static NSString *cellIdentifier = @"Cell";
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    return cell;
+    
 }
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 5;
+}
+
+
 
 @end
