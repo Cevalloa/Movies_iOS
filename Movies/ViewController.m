@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 AlexCevallos. All rights reserved.
 //
 
+#import "NSObject+NetworkConnectivity.h"
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self methodModalLayerSearchMovies:^(NSDictionary *dictionaryWithMovie) {
+        NSLog(@"%@", [dictionaryWithMovie[@"movies"] objectAtIndex:0]);
+    } withUserSearchInput:@"Toy Story"];
+    
 }
 
 - (void)didReceiveMemoryWarning {

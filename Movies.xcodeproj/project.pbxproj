@@ -14,6 +14,7 @@
 		CCA937AC1ABCC1C4009808E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCA937AB1ABCC1C4009808E7 /* Images.xcassets */; };
 		CCA937AF1ABCC1C4009808E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCA937AD1ABCC1C4009808E7 /* LaunchScreen.xib */; };
 		CCA937BB1ABCC1C5009808E7 /* MoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA937BA1ABCC1C5009808E7 /* MoviesTests.m */; };
+		CCA937C61ABCC67F009808E7 /* NSObject+NetworkConnectivity.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA937C51ABCC67F009808E7 /* NSObject+NetworkConnectivity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		CCA937B41ABCC1C5009808E7 /* MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA937B91ABCC1C5009808E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCA937BA1ABCC1C5009808E7 /* MoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesTests.m; sourceTree = "<group>"; };
+		CCA937C41ABCC67F009808E7 /* NSObject+NetworkConnectivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NetworkConnectivity.h"; sourceTree = "<group>"; };
+		CCA937C51ABCC67F009808E7 /* NSObject+NetworkConnectivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NetworkConnectivity.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +84,11 @@
 		CCA9379D1ABCC1C4009808E7 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
-				CCA937A21ABCC1C4009808E7 /* AppDelegate.h */,
-				CCA937A31ABCC1C4009808E7 /* AppDelegate.m */,
 				CCA937A51ABCC1C4009808E7 /* ViewController.h */,
 				CCA937A61ABCC1C4009808E7 /* ViewController.m */,
 				CCA937A81ABCC1C4009808E7 /* Main.storyboard */,
+				CCA937C71ABCC687009808E7 /* Modal / Networking Layer */,
+				CCA937C81ABCC698009808E7 /* AppDelegate & Podfile */,
 				CCA937AB1ABCC1C4009808E7 /* Images.xcassets */,
 				CCA937AD1ABCC1C4009808E7 /* LaunchScreen.xib */,
 				CCA9379E1ABCC1C4009808E7 /* Supporting Files */,
@@ -117,6 +120,24 @@
 				CCA937B91ABCC1C5009808E7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CCA937C71ABCC687009808E7 /* Modal / Networking Layer */ = {
+			isa = PBXGroup;
+			children = (
+				CCA937C41ABCC67F009808E7 /* NSObject+NetworkConnectivity.h */,
+				CCA937C51ABCC67F009808E7 /* NSObject+NetworkConnectivity.m */,
+			);
+			name = "Modal / Networking Layer";
+			sourceTree = "<group>";
+		};
+		CCA937C81ABCC698009808E7 /* AppDelegate & Podfile */ = {
+			isa = PBXGroup;
+			children = (
+				CCA937A21ABCC1C4009808E7 /* AppDelegate.h */,
+				CCA937A31ABCC1C4009808E7 /* AppDelegate.m */,
+			);
+			name = "AppDelegate & Podfile";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCA937A71ABCC1C4009808E7 /* ViewController.m in Sources */,
+				CCA937C61ABCC67F009808E7 /* NSObject+NetworkConnectivity.m in Sources */,
 				CCA937A41ABCC1C4009808E7 /* AppDelegate.m in Sources */,
 				CCA937A11ABCC1C4009808E7 /* main.m in Sources */,
 			);
