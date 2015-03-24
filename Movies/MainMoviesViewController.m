@@ -47,7 +47,7 @@
     
     MovieCustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    return cell;
+    return [cell methodCreateImageForCell:arrayOfMoviesInUseByEntireClass[indexPath.row]];
     
 }
 

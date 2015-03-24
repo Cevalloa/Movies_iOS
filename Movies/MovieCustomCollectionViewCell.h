@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MovieObject;
 
 @interface MovieCustomCollectionViewCell : UICollectionViewCell
 
-
+-(UICollectionViewCell *)methodCreateImageForCell:(MovieObject *)movieObjectPassedIn;
 
 @end

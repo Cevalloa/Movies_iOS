@@ -73,5 +73,22 @@
 #pragma mark Media Retrieval Methods
 -(void)methodModalLayerReturnImage:(void (^)(UIImage *))completion withStringLinkingToImage:(NSString *)stringLinkingToImage{
     
+    NSURL *url = [[NSURL alloc] initWithString:stringLinkingToImage];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    
+    NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        
+        NSData *data = [[NSData alloc] initWithContentsOfURL:location];
+        UIImage *image = [[UIImage alloc] initWithData:data];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(image);
+            NSLog(@"image returned");
+        });
+        
+    }];
+    
+    [task resume];
 }
 @end

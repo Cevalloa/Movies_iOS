@@ -7,6 +7,8 @@
 //
 
 #import "MovieCustomCollectionViewCell.h"
+#import "NSObject+NetworkConnectivity.h"
+#import "MovieObject.h"
 
 @interface MovieCustomCollectionViewCell()
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewMoviePoster;
@@ -15,5 +17,14 @@
 
 
 @implementation MovieCustomCollectionViewCell
+
+-(UICollectionViewCell *)methodCreateImageForCell:(MovieObject *)movieObjectPassedIn {
+
+    [self methodModalLayerReturnImage:^(UIImage * imageReturned) {
+        self.imageViewMoviePoster.image = imageReturned;
+    } withStringLinkingToImage:movieObjectPassedIn.dictionaryOfMoviePosterLinks[@"original"]];
+    
+    return self;
+}
 
 @end
