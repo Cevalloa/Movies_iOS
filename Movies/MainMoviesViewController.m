@@ -8,6 +8,7 @@
 
 #import "NSObject+NetworkConnectivity.h"
 #import "MovieCustomCollectionViewCell.h"
+#import "DetailViewController.h"
 #import "MainMoviesViewController.h"
 
 @interface MainMoviesViewController () {
@@ -55,12 +56,22 @@
     return [arrayOfMoviesInUseByEntireClass count];
 }
 
+#pragma mark - Collection View Delegate Methods
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"pushToDetail" sender:arrayOfMoviesInUseByEntireClass[indexPath.row]];
+}
+
 #pragma mark - Flow Layout Delegate Methods
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     //width - x  ... x = spaceInBetweenCells * how many spaces / (how many cells across)
     return CGSizeMake(([UIScreen mainScreen].bounds.size.width - 10) /3 ,170);
     
+}
+
+#pragma mark - Storyboard Methods
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [segue.destinationViewController setDictionaryWithDataPassedIn:sender];
 }
 
 

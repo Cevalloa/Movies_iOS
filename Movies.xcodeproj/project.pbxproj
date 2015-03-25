@@ -18,6 +18,7 @@
 		CCA937C61ABCC67F009808E7 /* NSObject+NetworkConnectivity.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA937C51ABCC67F009808E7 /* NSObject+NetworkConnectivity.m */; };
 		CCA937CD1ABD02F5009808E7 /* MovieObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA937CC1ABD02F5009808E7 /* MovieObject.m */; };
 		CCA937D01ABE472C009808E7 /* MovieCustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA937CF1ABE472C009808E7 /* MovieCustomCollectionViewCell.m */; };
+		CCF4AD991AC24E7000C9765A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF4AD981AC24E7000C9765A /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		CCA937CC1ABD02F5009808E7 /* MovieObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieObject.m; sourceTree = "<group>"; };
 		CCA937CE1ABE472C009808E7 /* MovieCustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCustomCollectionViewCell.h; sourceTree = "<group>"; };
 		CCA937CF1ABE472C009808E7 /* MovieCustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCustomCollectionViewCell.m; sourceTree = "<group>"; };
+		CCF4AD971AC24E7000C9765A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = Movies/DetailViewController.h; sourceTree = "<group>"; };
+		CCF4AD981AC24E7000C9765A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = Movies/DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,7 @@
 				CCA937AD1ABCC1C4009808E7 /* LaunchScreen.xib */,
 				CCA937AB1ABCC1C4009808E7 /* Images.xcassets */,
 				CCA9379D1ABCC1C4009808E7 /* Table View Classes */,
+				CCF4AD9A1AC2550A00C9765A /* Detail View Classes */,
 				CCA937C71ABCC687009808E7 /* Modal / Networking Layer */,
 				CCA937C81ABCC698009808E7 /* AppDelegate */,
 				CCA937CA1ABCFE34009808E7 /* Podfile */,
@@ -178,6 +182,15 @@
 			);
 			name = AppDelegate;
 			path = Movies;
+			sourceTree = "<group>";
+		};
+		CCF4AD9A1AC2550A00C9765A /* Detail View Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CCF4AD971AC24E7000C9765A /* DetailViewController.h */,
+				CCF4AD981AC24E7000C9765A /* DetailViewController.m */,
+			);
+			name = "Detail View Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +334,7 @@
 				CCA937C61ABCC67F009808E7 /* NSObject+NetworkConnectivity.m in Sources */,
 				CCA937A41ABCC1C4009808E7 /* AppDelegate.m in Sources */,
 				CCA937A11ABCC1C4009808E7 /* main.m in Sources */,
+				CCF4AD991AC24E7000C9765A /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
